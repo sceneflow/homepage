@@ -1,1 +1,466 @@
-Hello!
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Scene Flow Estimation: A Survey">
+<meta name="keywords" content="scene flow, survey, computer vision">
+<meta name="author" content="Zike Yan">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="CpEOXAd4lZ-NOnH1yTtnlZt-4SWgVhUvcyvnmaoqMyE" />
+<meta name="baidu-site-verification" content="WB6lqGSpq1" />
+<title>Scene Flow Survey</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/flexslider.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/font-icon.css">
+<link rel="stylesheet" href="css/slick.css">
+<link rel="stylesheet" href="css/slick-theme.css">
+<link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+</head>
+
+<body>
+<!-- header section -->
+<section class="banner" role="banner"> 
+  <!--header navigation -->
+  <header id="header">
+    <div class="header-content clearfix">
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#geometry">Geometry</a></li>
+          <li><a href="#progress">Progress</a></li>
+          <li><a href="#evaluation">Evaluation</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+  <!--header navigation --> 
+  <!-- banner text -->
+  <section class="pb_cover_v1" id="top" style="background-image: url(./images/banner.jpg)">
+   <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="banner-text text-center">
+        <h1 style="font-size: 40px;letter-spacing: 10px;">Scene Flow Estimation:</h1></hr>
+        <h1 style="font-weight: 80;">A Survey</h1>
+        </br></br></br></br></br></br></br>
+        <nav role="navigation"> <a href="#intro" class="banner-btn"><img src="images/down-arrow.png" alt=""></a></nav>
+      </div>
+      <!-- banner text --> 
+    </div>
+   </div>
+  </section>
+</section>
+<!-- header section --> 
+<!-- introduction section -->
+<section id="intro" class="pb_section">
+  <div class="container">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-5 pr-md-5 pr-sm-0">
+            <h2 class="mt-0 heading-border-top mb-3"><sup>01</sup> &nbsp;Introduction</h2>
+            <p>Scene flow describes the 3D motion of the world, which is one the of most fundamental properties of the scene. In this paper, we revisit the nature of scene flow estimation by raising the three questions:</p>
+        		<li><p>What is scene flow?</p></li>
+         		<li><p>Why do we need scene flow?</p></li>
+         		<li><p>Why is scene flow estimation under-developed?</p></li>
+          </div>
+          <div class="col-lg-7">
+            <div class="images">
+              <img class="img1 img-fluid" src="../law-master/assets/images/600x450_img_2.jpg" alt="free Template">
+            </div>
+          </div>
+        </div>
+      </div>  
+  </div>
+</section>
+<!-- publications section -->
+<section id="overview" class="section testimonials">
+   <div class="row justify-content-md-center">
+          <div class="col-md-10 col-sm-12 mb-5">
+            <div class="single-item-no-arrow pb_slide_v1">
+                <div class="media">
+                  <div class="media-body pl-md-5 pl-sm-0">
+                    <blockquote>
+                      <p>&ldquo;One representation of the scene motion is therefore a <b>dense three-dimensional vector field</b> defined for every point on every surface in the scene.&rdquo;<p style="font-style: normal; color: #868e96;text-align: right;font-style: normal;"><cite class="text-uppercase"><b>Sundar Vedula</b></cite></p></p>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-body pl-md-5 pl-sm-0">
+                    <blockquote>
+                      <p>&ldquo;Movement is an inherently <b>continuous</b> process. The relative motions between objects in a scene and cameras, and between different moving objects in the scene produce the apparent motions of objects between frames. The objective of motion analysis is to infer the <b>real motion</b> of objects in the scene from the changes between adjacent frames.&rdquo;<p style="font-style: normal; color: #868e96;text-align: right;font-style: normal;"><cite class="text-uppercase" ><b>Zhengyou Zhang</b></cite></p></p>
+                    </blockquote>
+                  </div>
+                </div>
+            </div>
+          </div>
+   </div>
+   <div class="container">
+    <div class="row">
+       <br><br>
+       <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>02</sup> &nbsp;Overview</h2>
+       <div class="container">
+       	   <h3 style="text-align: center;">Revised Definition: What Is Scene Flow?</h3>
+		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
+				<h4>&ldquo;Scene&rdquo;: Real Motion of the Scene</h4>
+				<p>Scene flow represents the real motion of the scene, and hence, scene flow is not exactly the same as range flow or three-dimensional extension of optical flow. A key word for this issue is <i>&ldquo;ego-motion&rdquo;</i>.</p>   
+		   </div> 
+		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
+				<h4>&ldquo;Flow&rdquo;: Continuous Nature beyond Discretization</h4>
+				<p>Scene flow describes a continuous function of the surface deformation, and current scene flow estimation is an approximation that discretize the scene flow spatially and temporally.</p>
+			</div>
+  	   </div>
+  	   <br></hr>
+  	   <div class="container">
+  		   <h3 style="text-align: center;">Uniqueness: Why We Need Scene Flow?</h3>
+		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
+				<h4>Comparison with Its Relevant Issues</h4>
+				<li><p>Deal with Dynamic and Non-rigid Moving Scenes</p></li>
+				<li><p>Simultaneously Estimate Geometry and Motion</p></li>
+				<li><p>Dense(Per-pixel) Estimation</p></li>
+		   </div> 
+		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
+				<h4>Comparison with Its Sub-tasks</h4>
+				<li><p>3D Estimation</p></li>
+				<li><p>Mutual Constraints for Motion and Geometry</p></li>
+		   </div>
+	   </div>
+  	   <br></hr>
+	   <div class="container">
+	   	   <h3 style="text-align: center;">Challenges: Why Scene Flow Estimation is Under-developed?</h3>
+		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
+				<li><p>High Complexity</p></li>
+				<li><p>Depth Uncertainty</p></li>
+		   </div> 
+		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
+				<li><p>Apparent Motion Ambiguity</p></li>
+				<li><p>Hodgepodge Fashion</p></li> 
+		   </div>
+	   </div>
+    </div>
+  </div>
+</section>
+<!-- geometry section -->
+<section id="geometry" class="works section">
+  <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>03</sup> &nbsp;Geometry: The Basis</h2>
+  <div class="container">
+    <h3 style="text-align: center;">Sensor Format:</h3><br>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6 services"> <span class="icon icon-camera"></span>
+        <div class="services-content" style="text-align: center;">
+			<h4>Active Sensor</h4><h5>Reliable Geometric Information</h5>
+          <div id="exampleAccordion" class="pb_accordion" data-children=".item">
+              <div class="item">
+                <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="false" aria-controls="exampleAccordion1">RGB-D Camera</a>
+                <div id="exampleAccordion1" class="collapse" role="tabpanel">
+                  <p><small>Limited sensing range.</small></p>
+                  <p><small>Inference by external light.</small></p>
+                </div>
+              </div>
+              <div class="item">
+                <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion2" aria-expanded="false" aria-controls="exampleAccordion2" class="pb_font-18">LiDAR Scanner</a>
+                <div id="exampleAccordion2" class="collapse" role="tabpanel">
+                  <p><small>Sparse and discreet data.</small></p>
+				  <p><small>Unreliable photometric information</small></p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 services"> <span class="icon icon-video"></span>
+        <div class="services-content" style="text-align: center;">
+          <h4>Passive Sensor</h4><h5>Reliable Photometric Information</h5>
+          <div id="exampleAccordion" class="pb_accordion" data-children=".item">
+              <div class="item">
+                <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion3" aria-expanded="false" aria-controls="exampleAccordion3">Binocular</a>
+                <div id="exampleAccordion3" class="collapse" role="tabpanel">
+                  <p><small>Unsolved geometry estimation problem.</small></p>
+                </div>
+              </div>
+              <div class="item">
+                <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion4" aria-expanded="false" aria-controls="exampleAccordion4" class="pb_font-18">Multi-view</a>
+                <div id="exampleAccordion4" class="collapse" role="tabpanel">
+                  <p><small>Not portable.</small></p><p><small>Computationally expensive.</small></p>
+                </div>
+              </div>
+              <div class="item">
+                <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion5" aria-expanded="false" aria-controls="exampleAccordion5" class="pb_font-18">Light Field</a>
+                <div id="exampleAccordion5" class="collapse" role="tabpanel">
+                  <p><small>Unsolved geometry estimation problem.</small></p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <h3 style="text-align: center;">Scene Representation:</h3><br>
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 work"> <a href="images/pixel.jpg" title="2D Pixel-level Representation" class="work-box"> <img src="images/pixel.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><span class="icon icon-magnifying-glass"></span></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 work"> <a href="images/point.jpg" title="3D Point-level Representation" class="work-box"> <img src="images/point.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><span class="icon icon-magnifying-glass"></span></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 work"> <a href="images/segment.jpg" title="2D Segment Representation" class="work-box"> <img src="images/segment.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><span class="icon icon-magnifying-glass"></span></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 work"> <a href="images/work-4.jpg" title="3D Plane Representation" class="work-box"> <img src="images/work-4-thumb.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><span class="icon icon-magnifying-glass"></span></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 work"> <a href="images/work-5.jpg" title="3D Object Representation" class="work-box"> <img src="images/work-5.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><span class="icon icon-magnifying-glass"></span></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+    </div>
+  </div>
+</section>
+<!-- projects section -->
+<section id="progress" class="section testimonials">
+  <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>04</sup> &nbsp;Progress</h2>
+  <div class="container">
+    <div class="row">
+       <div class="col-lg-0 pr-md-0 pr-sm-0 container">
+            <p>Besides the challenges for scene flow estimation, to answer the question of why scene flow estimation is under-developed, we need to understand what progress has been made over the years. 
+            <p>As a <i>maximum a posteriori</i> (MAP) problem, we represent the modeling of scene flow estimation problem using the explicit factor graph, where the posteriori probability includes an unary term namely data term and two pairwise terms for spatial and temporal regularization. The different designs of these terms lead to diverse scene flow models, where the trend in each kind of term reveal the progress of modeling.</p>
+		   <p>Apart from the modeling, to solve the MAP problem, different optimization methods have been taken, along with some special implementations. We provide details about each category, and stress the trend in each period to depict the development of scene flow estimation.</p>
+       </div>
+	  </div>
+  </div>
+  <div class="no-gutter">  
+       <div class="multiple-items pb_slide_v1">
+        <div>
+          <a href="#" class="link-block">
+            <img src="images/data_term.jpg" alt="" class="img-fluid">
+            <div class="slide-text">
+              <h2>Data Term</h2>
+              <span>Read More</span>
+            </div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="link-block">
+            <img src="images/regu_term.jpg" alt="" class="img-fluid">
+            <div class="slide-text">
+              <h2>Spatial Regularization Term</h2>
+              <span>Read More</span>
+            </div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="link-block">
+            <img src="images/temp_term.jpg" alt="" class="img-fluid">
+            <div class="slide-text">
+              <h2>Temporal Regularization Term</h2>
+              <span>Read More</span>
+            </div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="link-block">
+            <img src="images/optimization.jpg" alt="" class="img-fluid">
+            <div class="slide-text">
+              <h2>Optimization</h2>
+              <span>Read More</span>
+            </div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="link-block">
+            <img src="images/implementation.jpg" alt="" class="img-fluid">
+            <div class="slide-text">
+              <h2>Special Implementation</h2>
+              <span>Read More</span>
+            </div>
+          </a>
+        </div>
+      </div>
+  </div>
+</section>
+<!-- Others -->
+<section id="evaluation" class="section teams">
+    <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>05</sup> &nbsp;Evaluation: Metric, Dataset, and Performance</h2>
+    <div>
+       	   <h3 style="text-align: center;">Evaluation Metrics</h3>
+       	   <div>
+			   <table>
+				<tbody style="text-align: center;">
+					<tr>
+						<th><b>Metric</b></th>
+						<th><b>Function</b></th>
+					</tr> 
+					<tr>
+						<th>EPE</th>
+						<th><img src="images/EPE.png" alt="" style="height: 40px;"></th>
+					</tr> 
+					<tr>
+						<th>RMSE</th>
+						<th><img src="images/RMSE.png" alt="" style="height: 40px;"></th>
+					</tr>
+					<tr>
+						<th>AAE</th>
+						<th><img src="images/AAE.png" alt="" style="height: 40px;"></th>
+					</tr> 
+				</tbody>
+			   </table>
+		   </div>
+		   <br><br>
+		   <h3 style="text-align: center;">Dataset and Performance</h3>
+		   <div style="padding-bottom: 50px;overflow: auto; width: 80%;margin: auto;">
+			   <table class="table-responsive">
+				<tbody style="text-align: center;">
+					<tr>
+						<th><b>Dataset</b></th>
+						<th><b>Consecutive Sequence</b></th>
+						<th><b>Resolution</b></th>
+						<th><b>Frames(test+train)</b></th>
+						<th><b>Scene Type</b></th>
+						<th><b>Motion Type</b></th>
+					</tr> 
+					<tr>
+						<th><a href="http://vision.middlebury.edu/stereo/data/" target="_blank">Middlebury</a></th>
+						<th>no</th>
+						<th>450×375</th>
+						<th>3</th>
+						<th>real</th>
+						<th>camera</th>
+					</tr> 
+					<tr>
+						<th><a href="http://devernay.free.fr/vision/varsceneflow/" target="_blank">Sphere</a></th>
+						<th>no</th>
+						<th>512×512</th>
+						<th>1</th>
+						<th>synthetic</th>
+						<th>scene</th>
+					</tr>
+					<tr>
+						<th><a href="http://www.cvlibs.net/datasets/kitti/eval_stereo_flow.php?benchmark=stereo" target="_blank">KITTI 2012</a></th>
+						<th>yes</th>
+						<th>1238×374</th>
+						<th>195 + 194</th>
+						<th>real</th>
+						<th>camera</th>
+					</tr>
+					<tr>
+						<th><a href="http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php" target="_blank">KITTI 2015</a></th>
+						<th>yes</th>
+						<th>1242×375</th>
+						<th>200 + 200</th>
+						<th>real</th>
+						<th>both</th>
+					</tr> 
+					<th><a href="http://sintel.is.tue.mpg.de" target="_blank">MPI Sintel</a></th>
+						<th>yes</th>
+						<th>1024×436</th>
+						<th>564 + 1264</th>
+						<th>synthetic</th>
+						<th>both</th>
+				</tbody>
+			   </table>
+		   </div>
+		   <small>-click the text to show performance on each dataset.-</click></small>
+		   <div class="background" style="background-image: url(images/middlebury.jpg);">
+		   	<div class="container">
+				<a href="images/middlebury.png" title="Performance on Middlebury-Cones dataset" class="work-box"><p><b>Middlebury</b>: only contains camera motion without scene motion. It enables evaluating both optical flow and disparity estimation after 2001.</p></a>   
+			</div>
+		   </div>
+		   <div class="background" style="background-image: url(images/sphere.jpg);">
+		   	<div class="container">
+				<a href="images/sphere.png" title="Performance on Rotating Sphere dataset" class="work-box"><p><b>Rotating Sphere</b>: only contains scene motion without camera motion. It is rendered for evaluating scene flow estimation in 2007.</p></a>   
+			</div>
+		   </div> 
+		   <div class="background" style="background-image: url(images/KITTI.jpg);">
+		   	<div class="container">
+				<a href="images/KITTI2015.png" title="Performance on KITTI 2015 dataset" class="work-box"><p><b>KITTI</b>: is currently the only real-world dataset for scene flow evaluation. The online evaluation provides a convenient comparison between each method. </p></a>   
+			</div>
+		   </div>
+		   <div class="background" style="background-image: url(images/sintel.jpg);">
+		   	<div class="container">
+				<a href="http://sintel.is.tue.mpg.de/" target="_blank"><p><b>MPI Sintel</b>: is a strictly realistic virtual dataset. It is highly recommended for its comprehensive and challenging scenes.</p></a> 
+			</div>
+		   </div>  
+  	   </div>
+</section>
+<!-- work section -->
+
+<!-- Get a quote section
+<section id="contact" class="section teams">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h3>I'm Currently looking for a Ph.d position. If you are interested:</h3><br><br>
+      <a href="mailto:yanzike@hrbeu.edu.cn" title="E-mail:yanzike@hrbeu.edu.cn" class="btn btn-large">CONTACT ME, PLEASE!</a> 
+    </div>
+  </div>
+</section>
+<!-- Get a quote section -->
+<!-- Footer section -->
+<footer class="footer">
+  <div class="footer-top section">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-xs-6 col-md-4">
+          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&copy Zike Yan</h5>
+          <ul class="footer-share">
+            <li><a href="https://www.facebook.com/zico.yan" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://github.com/ZikeYan" target="_blank"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/子轲-颜-090420104" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://500px.com/vintagewerke" target="_blank"><i class="fa fa-500px"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-col col-xs-12 col-md-8 pull-right">
+           <nav role="navigation"><p class="pull-right"><a href="#top"><br>Back to Top &nbsp;&nbsp;<i class="fa fa-chevron-circle-up"></i></a></p></nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer top --> 
+  
+</footer>
+<!-- Footer section --> 
+<!-- JS FILES --> 
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.flexslider-min.js"></script> 
+<script src="js/jquery.fancybox.pack.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/modernizr.js"></script> 
+<script src="js/main.js"></script>
+<script src="js/main2.js"></script>
+<script src="js/slick.min.js"></script>
+</body>
+</html>
