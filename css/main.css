@@ -45,7 +45,7 @@
 
 .pb_cover_v1 {
   position: relative;
-  height: 100vh; }
+  height: 100vh;}
   .pb_cover_v1 .container {
 	padding: 0 10vw;}
     .pb_cover_v1 .row {
@@ -365,8 +365,8 @@ ul, ol {
 	margin: 0;
 	padding: 0;
 }
-ul li {
-	list-style: none;
+#intro, #overview li {
+	list-style:none;
 }
 .section {
 	padding: 100px 0;
@@ -402,15 +402,12 @@ ul li {
 #header .logo {
 	float: left;
 }
-#header.fixed {
+#header {
 	background-color: rgba(0, 0, 0, 1);
 }
-#header.fixed .header-content {
+#header .header-content {
 	border-bottom: 0;
 	padding: 25px 0;
-}
-#header.fixed .nav-toggle {
-	top: 18px;
 }
 .navigation.open {
 	opacity: 0.9;
@@ -422,6 +419,7 @@ ul li {
 }
 .navigation {
 	float: right;
+	padding-right: 50px;
 }
 .navigation li {
 	display: inline-block;

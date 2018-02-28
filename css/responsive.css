@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 800px) {
 #header .header-content {
 	width: 90%;
 }
@@ -58,21 +58,19 @@
 }
 }
 @media screen and (max-width: 768px) {
-.flexslider {
-	padding-bottom: 80px;
-}
-.flex-control-nav {
-	width: 100%;
-}
 .footer .footer-col {
 	margin-bottom: 50px;
 }
 }
 @media screen and (max-width: 640px) {
-
+.background .container p{font-size: 20px;}
 }
 @media screen and (max-width: 480px) {
-
+.background .container p{font-size: 18px;}
+h2{font-size: 32px;}
+.media blockquote p {font-size: 16px;}
+.nav-toggle{right: 10%;}
+table{margin: auto; width: 80%;}
 }
 @media screen and (max-width: 320px) {
 .testimonials blockquote {
@@ -81,4 +79,5 @@
 .testimonials p {
 	/*font-size: 14px;*/
 }
+h2{font-size: 28px;}
 }
