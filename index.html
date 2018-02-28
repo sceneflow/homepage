@@ -48,14 +48,14 @@
   <!-- banner text -->
   <section class="pb_cover_v1" id="top" style="background-image: url(./images/banner.jpg)">
    <div class="container">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="banner-text text-center">
-        <h1 style="font-size: 40px;letter-spacing: 10px;">Scene Flow Estimation:</h1></hr>
-        <h1 style="font-weight: 80;">A Survey</h1>
-        </br></br></br></br></br></br></br>
-        <nav role="navigation"> <a href="#intro" class="banner-btn"><img src="images/down-arrow.png" alt=""></a></nav>
+    <div class="row">
+      <div class="banner-text text-left">
+        <h1 style="font-size: 3vw;letter-spacing: 1vw;font-weight: 80;">Scene Flow Estimation:</h1></hr>
+		<h1 style="font-weight: 400;">A Survey</h1><br><br>
+     	<a href="#" role="button" class="button">Taxonomy&nbsp;</a><br>
+     	<a href="#" role="button" class="button">Evaluation</a>
       </div>
-      <!-- banner text --> 
+
     </div>
    </div>
   </section>
@@ -67,7 +67,7 @@
     <div class="container">
         <div class="row">
           <div class="col-lg-5 pr-md-5 pr-sm-0">
-            <h2 class="mt-0 heading-border-top mb-3"><sup>01</sup> &nbsp;Introduction</h2>
+            <h2 class="heading-border-top"><sup>01</sup> &nbsp;Introduction</h2>
             <p>Scene flow describes the 3D motion of the world, which is one the of most fundamental properties of the scene. In this paper, we revisit the nature of scene flow estimation by raising the three questions:</p>
         		<li><p>What is scene flow?</p></li>
          		<li><p>Why do we need scene flow?</p></li>
@@ -84,18 +84,18 @@
 </section>
 <!-- publications section -->
 <section id="overview" class="section testimonials">
-   <div class="row justify-content-md-center">
-          <div class="col-md-10 col-sm-12 mb-5">
+   <div class="justify-content-md-center">
+          <div class="col-md-10 col-sm-12 col-xs-12 mb-5">
             <div class="single-item-no-arrow pb_slide_v1">
                 <div class="media">
-                  <div class="media-body pl-md-5 pl-sm-0">
+                  <div class="media-body">
                     <blockquote>
                       <p>&ldquo;One representation of the scene motion is therefore a <b>dense three-dimensional vector field</b> defined for every point on every surface in the scene.&rdquo;<p style="font-style: normal; color: #868e96;text-align: right;font-style: normal;"><cite class="text-uppercase"><b>Sundar Vedula</b></cite></p></p>
                     </blockquote>
                   </div>
                 </div>
                 <div class="media">
-                  <div class="media-body pl-md-5 pl-sm-0">
+                  <div class="media-body">
                     <blockquote>
                       <p>&ldquo;Movement is an inherently <b>continuous</b> process. The relative motions between objects in a scene and cameras, and between different moving objects in the scene produce the apparent motions of objects between frames. The objective of motion analysis is to infer the <b>real motion</b> of objects in the scene from the changes between adjacent frames.&rdquo;<p style="font-style: normal; color: #868e96;text-align: right;font-style: normal;"><cite class="text-uppercase" ><b>Zhengyou Zhang</b></cite></p></p>
                     </blockquote>
@@ -107,7 +107,7 @@
    <div class="container">
     <div class="row">
        <br><br>
-       <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>02</sup> &nbsp;Overview</h2>
+       <h2 class="heading-border-top" style="text-align: center;"><sup>02</sup> &nbsp;Overview</h2>
        <div class="container">
        	   <h3 style="text-align: center;">Revised Definition: What Is Scene Flow?</h3>
 		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
@@ -136,7 +136,7 @@
 	   </div>
   	   <br></hr>
 	   <div class="container">
-	   	   <h3 style="text-align: center;">Challenges: Why Scene Flow Estimation is Under-developed?</h3>
+	   	   <h3 style="text-align: center;">Challenges: Why Scene Flow Estimation is Under-developed?</h3><br>
 		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-0">
 				<li><p>High Complexity</p></li>
 				<li><p>Depth Uncertainty</p></li>
@@ -151,11 +151,11 @@
 </section>
 <!-- geometry section -->
 <section id="geometry" class="works section">
-  <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>03</sup> &nbsp;Geometry: The Basis</h2>
+  <h2 class="heading-border-top" style="text-align: center;"><sup>03</sup> &nbsp;Geometry: The Basis</h2>
   <div class="container">
     <h3 style="text-align: center;">Sensor Format:</h3><br>
     <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-6 services"> <span class="icon icon-camera"></span>
+      <div class="col-md-6 col-sm-6 col-xs-12 services">
         <div class="services-content" style="text-align: center;">
 			<h4>Active Sensor</h4><h5>Reliable Geometric Information</h5>
           <div id="exampleAccordion" class="pb_accordion" data-children=".item">
@@ -176,7 +176,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-sm-6 col-xs-6 services"> <span class="icon icon-video"></span>
+      <div class="col-md-6 col-sm-6 col-xs-12 services">
         <div class="services-content" style="text-align: center;">
           <h4>Passive Sensor</h4><h5>Reliable Photometric Information</h5>
           <div id="exampleAccordion" class="pb_accordion" data-children=".item">
@@ -206,7 +206,7 @@
   <br>
   <div class="container-fluid">
     <div class="row no-gutter">
-      <h3 style="text-align: center;">Scene Representation:</h3><br>
+      <div class="container"><h3 style="text-align: center;">Scene Representation:</h3><br></div>
       <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 work"> <a href="images/pixel.jpg" title="2D Pixel-level Representation" class="work-box"> <img src="images/pixel.jpg" alt="">
         <div class="overlay">
           <div class="overlay-caption">
@@ -252,13 +252,13 @@
 </section>
 <!-- projects section -->
 <section id="progress" class="section testimonials">
-  <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>04</sup> &nbsp;Progress</h2>
+  <h2 class="heading-border-top" style="text-align: center;"><sup>04</sup> &nbsp;Progress</h2>
   <div class="container">
     <div class="row">
        <div class="col-lg-0 pr-md-0 pr-sm-0 container">
             <p>Besides the challenges for scene flow estimation, to answer the question of why scene flow estimation is under-developed, we need to understand what progress has been made over the years. 
             <p>As a <i>maximum a posteriori</i> (MAP) problem, we represent the modeling of scene flow estimation problem using the explicit factor graph, where the posteriori probability includes an unary term namely data term and two pairwise terms for spatial and temporal regularization. The different designs of these terms lead to diverse scene flow models, where the trend in each kind of term reveal the progress of modeling.</p>
-		   <p>Apart from the modeling, to solve the MAP problem, different optimization methods have been taken, along with some special implementations. We provide details about each category, and stress the trend in each period to depict the development of scene flow estimation.</p>
+		   <p>Apart from the modeling, to solve the MAP problem, different optimization methods have been taken, along with some special implementations. We provide details about each category, and stress the trend in each period to depict the development of scene flow estimation.</p><br><br>
        </div>
 	  </div>
   </div>
@@ -314,9 +314,9 @@
 </section>
 <!-- Others -->
 <section id="evaluation" class="section teams">
-    <h2 class="mt-0 heading-border-top mb-3" style="text-align: center;"><sup>05</sup> &nbsp;Evaluation: Metric, Dataset, and Performance</h2>
+    <h2 class="heading-border-top" style="text-align: center;"><sup>05</sup> &nbsp;Evaluation: Metric, Dataset, and Performance</h2>
     <div>
-       	   <h3 style="text-align: center;">Evaluation Metrics</h3>
+		<div class="container"><h3 style="text-align: center;">Evaluation Metrics</h3></div>
        	   <div>
 			   <table>
 				<tbody style="text-align: center;">
@@ -340,7 +340,7 @@
 			   </table>
 		   </div>
 		   <br><br>
-		   <h3 style="text-align: center;">Dataset and Performance</h3>
+		<div class="container"><h3 style="text-align: center;">Dataset and Performance</h3></div>
 		   <div style="padding-bottom: 50px;overflow: auto; width: 80%;margin: auto;">
 			   <table class="table-responsive">
 				<tbody style="text-align: center;">
@@ -393,7 +393,6 @@
 				</tbody>
 			   </table>
 		   </div>
-		   <small>-click the text to show performance on each dataset.-</click></small>
 		   <div class="background" style="background-image: url(images/middlebury.jpg);">
 		   	<div class="container">
 				<a href="images/middlebury.png" title="Performance on Middlebury-Cones dataset" class="work-box"><p><b>Middlebury</b>: only contains camera motion without scene motion. It enables evaluating both optical flow and disparity estimation after 2001.</p></a>   
@@ -430,16 +429,14 @@
 <!-- Get a quote section -->
 <!-- Footer section -->
 <footer class="footer">
-  <div class="footer-top section">
+  <div class="footer-top">
     <div class="container">
       <div class="row">
         <div class="footer-col col-xs-6 col-md-4">
-          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&copy Zike Yan</h5>
+          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&copy Zike Yan / 2018</h5>
           <ul class="footer-share">
-            <li><a href="https://www.facebook.com/zico.yan" target="_blank"><i class="fa fa-facebook"></i></a></li>
             <li><a href="https://github.com/ZikeYan" target="_blank"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/子轲-颜-090420104" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://500px.com/vintagewerke" target="_blank"><i class="fa fa-500px"></i></a></li>
+            <li><a href="mailto:zike_yan@icloud.com" title="E-mail:zike_yan@icloud.com"><i class="fa fa-envelope"></i></a></li>
           </ul>
         </div>
         <div class="footer-col col-xs-12 col-md-8 pull-right">
