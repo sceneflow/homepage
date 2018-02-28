@@ -60,7 +60,7 @@
   .pb_cover_v1 .text-left {
 	  float: left; }
 
-.button{
+.buttonn{
 	display:inline-block;
 	text-decoration:none;
 	color:#efefef;
@@ -70,7 +70,7 @@
 	margin-top:2vh;
 	padding:1em 3em;
 	border:1px solid rgba(255,255,255,0.3);}
-.button:hover{background-color:#e84545; color:#efefef; border-color:#efefef;}
+.buttonn:hover{background-color:#e84545; color:#efefef; border-color:#efefef;}
 
 .pb_section {
   padding: 9em 0;
